@@ -32,7 +32,7 @@ public class UserIT
 		
 		
 		 MultipartBodyBuilder multipartBodyBuilder = new MultipartBodyBuilder();
-		    multipartBodyBuilder.part("file", new ClassPathResource("application/tux.jpg"));
+		    multipartBodyBuilder.part("file", new ClassPathResource("tux.jpg"));
 		           
 		multipartBodyBuilder.part("data", objectMapper.writeValueAsString(user)).
 		contentType(MediaType.APPLICATION_JSON);

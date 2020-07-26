@@ -1,8 +1,8 @@
 package com.hali.spring.usrprofile;
 
-import org.springframework.data.mongodb.repository.ReactiveMongoRepository;
+import org.springframework.content.commons.repository.ContentRepository;
 
-public interface UserImageRepository extends ReactiveMongoRepository<User,String>
+public interface UserImageRepository extends ContentRepository<User,String>
 {
 
 }
