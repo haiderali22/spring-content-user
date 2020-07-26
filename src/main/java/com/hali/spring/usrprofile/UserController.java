@@ -18,8 +18,8 @@ public class UserController
 	
 	@PostMapping("/user")
 	@ResponseStatus(code = HttpStatus.CREATED)
-	public Mono<UserDTO> post(@RequestPart("data") Mono<UserDTO>  data,
-			@RequestPart("file") Mono<FilePart>  file)
+	public Mono<UserDTO> post(@RequestPart("data") UserDTO  data,
+			@RequestPart("file") FilePart file)
 	{
 		return userService.add(data,file);
 	}

@@ -13,11 +13,15 @@ public class UserService
 	
 	private final UserRepository userRepository;
 	private final UserImageRepository userImageRepository;
+	private final UserMapper userMapper;
 
-	public Mono<UserDTO> add(Mono<UserDTO> data, Mono<FilePart> file) 
-	{
-		// TODO Auto-generated method stub
-		return null;
+	public Mono<UserDTO> add(UserDTO data, FilePart file) 
+	{	
+		return  userRepository.save(userMapper.map(data)).map( usr -> {
+//			userImageRepository.setContent(usr, content)		
+			
+			return userMapper.map(usr);
+		});
 	}
 	
 }
